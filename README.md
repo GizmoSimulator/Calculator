@@ -1,2 +1,2 @@
 # Calculator
-A basic calculator app using HTML, CSS and some Javascript.
+A basic grade calculator app using HTML, CSS and some Javascript.
