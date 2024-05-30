@@ -1,8 +1,18 @@
+main{
+    border-top: 30px solid #3D3935;
+    border-bottom: 30px solid #3D3935;
 
-.mainpart {
-    background-color: aqua;
+}
+#mainpart {
+    background-color: #E9EFF1;
 
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
 
+}
+
+table, th, tr, td{
+    border: 1px solid #c5c2c2;
+}
+
+table{
+    border-collapse: collapse;
 }
