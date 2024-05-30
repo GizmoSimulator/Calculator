@@ -12,7 +12,7 @@ body{
 
 /* top right bottom left */
 main{
-    height: 70vh;
+    height: 80vh;
     padding: 10px 30px 40px;
     background-color: white;
     border-top: 20px solid #3D3935;
@@ -34,9 +34,6 @@ h1{
     width: 70%;
     height: 80%;
     overflow: auto;
-
-    
-    
 }
 
 table, th, tr, td{
@@ -71,7 +68,7 @@ h2{
     font-family: Georgia;
 }
 
-p{
+p, .result{
     padding: 10px 0px 20px 0px;
     font-size: 11px;
     font-family: Georgia;
@@ -85,7 +82,7 @@ p{
     padding: 1px 4px;
 }
 
-.calcButton{
+#meanButton, #weightButton{
     background-color: #b32036;
     font-size: 9px;
     border: none;
@@ -99,9 +96,14 @@ p{
 }
 
 
-input {
+.weightInput, .grInput, .percentField{
     
     width: 28px;
     left:14px;
     height: 21px;
 }
+
+/* .percentField{
+    user-select: none;
+    outline: none;
+} */
