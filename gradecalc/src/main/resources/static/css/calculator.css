@@ -16,44 +16,61 @@ main{
     background-color: white;
     border-top: 30px solid #3D3935;
     border-bottom: 30px solid #3D3935;
+
 }
 
 h1{
     padding: 40px 0px 20px 0px;
+    font-family: Helvetica;
+    font-weight: 500;
 }
 
 #mainpart {
-    padding: 40px 20px 40px 20px;
+    padding: 20px 20px 50px 20px;
     background-color: #E9EFF1;
-    border: 1px solid #bdc5c7;
-    border-radius: 2px;
+    border: 1px solid #DCE6EA;
+    border-radius: 3px;
+    width: 70%;
+    
+    
 }
 
 table, th, tr, td{
     border: 1px solid #c5c2c2;
     text-align: left;
-    padding: 5px 5px 5px 5px;
+    overflow-x: auto;
+}
+
+table{
     width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th{
+    background-color: #e3e2e2;
+}
+
+td{
+    font-family: Georgia;
+}
+
+th, td{
+    padding: 5px 5px 5px 5px;
+    min-width: none;
 }
 
 h2{
     color: #b32036;
     padding: 10px 0px 10px 0px;
     font-size: 20px;
+    font-family: Georgia;
 }
 
 p{
     padding: 10px 0px 20px 0px;
-    font-size: 15px;
-}
-
-table{
-    
-    border-collapse: collapse;
-}
-
-th{
-    background-color: #e3e2e2;
+    font-size: 13px;
+    font-family: Georgia;
 }
 
 #addRow{
@@ -69,7 +86,6 @@ th{
     font-size: 13px;
     border: none;
     color: white;
-    table-layout: fixed;
     width: 90px;
     border-radius: 3px;
     padding: 5px 10px 5px 10px;
