@@ -1,8 +1,14 @@
+body{
+    background-color:#b32036;
+}
+
 main{
+    background-color: white;
     border-top: 30px solid #3D3935;
     border-bottom: 30px solid #3D3935;
 
 }
+
 #mainpart {
     background-color: #E9EFF1;
 
@@ -15,4 +21,8 @@ table, th, tr, td{
 
 table{
     border-collapse: collapse;
+}
+
+h2{
+    color: #b32036;
 }
