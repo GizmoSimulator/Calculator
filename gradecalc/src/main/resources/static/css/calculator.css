@@ -12,10 +12,7 @@ body{
 
 /* top right bottom left */
 main{
-    padding: 40px 40px 20px;
-    position: relative;
-    /* left: 40px;
-    right: 40px; */
+    padding: 40px 30px 40px;
     background-color: white;
     border-top: 30px solid #3D3935;
     
@@ -24,33 +21,67 @@ main{
 
 }
 
+h1{
+    padding: 40px 0px 20px 0px;
+}
+
 #mainpart {
-    padding: 40px 100px 100px 20px;
+    padding: 40px 100px 40px 20px;
     background-color: #E9EFF1;
     border: 1px solid #bdc5c7;
-    border-radius: 5px;
+    border-radius: 2px;
 
 
 }
 
 table, th, tr, td{
     border: 1px solid #c5c2c2;
+    text-align: left;
+    /* width: fit-content; */
+    padding: 5px 70px 5px 5px;
 }
 
 h2{
     color: #b32036;
+    padding: 10px 0px 10px 0px;
+    font-size: 20px;
+}
+
+p{
+    padding: 10px 0px 20px 0px;
+    font-size: 15px;
 }
 
 table{
+    
     border-collapse: collapse;
 }
 
-
 th{
     background-color: #e3e2e2;
-    width: 100px;
 }
 
+#addRow{
+    font-size: 12px;
+    position: relative;
+    margin-top:20px;
+    margin-bottom:10px;
+    padding: 1px 5px 1px 5px;
+}
+
+.calcButton{
+    background-color: #b32036;
+    font-size: 13px;
+    border: none;
+    color: white;
+
+    border-radius: 2px;
+    padding: 5px 10px 5px 10px;
+}
+
+
 input {
-    width: 30px;
+    width: 40px;
+    left:20px;
+    height: 30px;
 }
