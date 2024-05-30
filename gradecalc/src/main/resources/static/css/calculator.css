@@ -15,10 +15,7 @@ main{
     padding: 40px 30px 40px;
     background-color: white;
     border-top: 30px solid #3D3935;
-    
     border-bottom: 30px solid #3D3935;
-    
-
 }
 
 h1{
@@ -26,19 +23,17 @@ h1{
 }
 
 #mainpart {
-    padding: 40px 100px 40px 20px;
+    padding: 40px 20px 40px 20px;
     background-color: #E9EFF1;
     border: 1px solid #bdc5c7;
     border-radius: 2px;
-
-
 }
 
 table, th, tr, td{
     border: 1px solid #c5c2c2;
     text-align: left;
-    /* width: fit-content; */
-    padding: 5px 70px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    width: 100%;
 }
 
 h2{
@@ -74,9 +69,13 @@ th{
     font-size: 13px;
     border: none;
     color: white;
-
-    border-radius: 2px;
+    table-layout: fixed;
+    width: 90px;
+    border-radius: 3px;
     padding: 5px 10px 5px 10px;
+    float: right;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 
