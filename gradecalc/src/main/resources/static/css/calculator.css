@@ -12,25 +12,29 @@ body{
 
 /* top right bottom left */
 main{
-    padding: 40px 30px 40px;
+    height: 70vh;
+    padding: 10px 30px 40px;
     background-color: white;
-    border-top: 30px solid #3D3935;
+    border-top: 20px solid #3D3935;
     border-bottom: 30px solid #3D3935;
-
 }
 
 h1{
     padding: 40px 0px 20px 0px;
     font-family: Helvetica;
+    font-size: 24px;
     font-weight: 500;
 }
 
 #mainpart {
-    padding: 20px 20px 50px 20px;
+    padding: 15px 10px 40px 10px;
     background-color: #E9EFF1;
     border: 1px solid #DCE6EA;
     border-radius: 3px;
     width: 70%;
+    height: 80%;
+    overflow: auto;
+
     
     
 }
@@ -43,6 +47,7 @@ table, th, tr, td{
 
 table{
     width: 100%;
+    height: auto;
     border-collapse: collapse;
     table-layout: fixed;
 }
@@ -51,44 +56,43 @@ th{
     background-color: #e3e2e2;
 }
 
-td{
-    font-family: Georgia;
-}
 
 th, td{
     padding: 5px 5px 5px 5px;
     min-width: none;
+    font-size: 11px;
+    font-family: Georgia;
 }
 
 h2{
     color: #b32036;
-    padding: 10px 0px 10px 0px;
-    font-size: 20px;
+    padding: 7px 0px 7px 0px;
+    font-size: 14px;
     font-family: Georgia;
 }
 
 p{
     padding: 10px 0px 20px 0px;
-    font-size: 13px;
+    font-size: 11px;
     font-family: Georgia;
 }
 
 #addRow{
-    font-size: 12px;
+    font-size: 8px;
     position: relative;
-    margin-top:20px;
-    margin-bottom:10px;
-    padding: 1px 5px 1px 5px;
+    margin-top:14px;
+    margin-bottom:7px;
+    padding: 1px 4px;
 }
 
 .calcButton{
     background-color: #b32036;
-    font-size: 13px;
+    font-size: 9px;
     border: none;
     color: white;
-    width: 90px;
+    width: 63px;
     border-radius: 3px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 0px;
     float: right;
     margin-right: 5px;
     margin-left: 5px;
@@ -96,7 +100,8 @@ p{
 
 
 input {
-    width: 40px;
-    left:20px;
-    height: 30px;
+    
+    width: 28px;
+    left:14px;
+    height: 21px;
 }
