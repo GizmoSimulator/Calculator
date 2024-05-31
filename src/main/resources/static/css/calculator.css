@@ -1,0 +1,118 @@
+/* I included this for formatting, and so there would be no space on top */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+
+body{
+    background-color:#b32036;
+    padding: 0px 40px;
+
+    margin-bottom: 0px;
+}
+
+/* top right bottom left */
+main{
+    /* height: 80vh; */
+    padding: 10px 30px 40px;
+    background-color: white;
+    border-top: 20px solid #3D3935;
+    border-bottom: 30px solid #3D3935;
+}
+
+h1{
+    padding: 40px 0px 20px 0px;
+    font-family: Helvetica;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#mainpart {
+    padding: 15px 10px 40px 10px;
+    background-color: #E9EFF1;
+    border: 1px solid #DCE6EA;
+    border-radius: 3px;
+    width: 70%;
+    height: 80%;
+    overflow: auto;
+}
+
+table, th, tr, td{
+    border: 1px solid #c5c2c2;
+    text-align: left;
+    overflow-x: auto;
+}
+
+table{
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th{
+    background-color: #e3e2e2;
+}
+
+
+th, td{
+    padding: 5px 5px 5px 5px;
+    min-width: none;
+    font-size: 12px;
+    font-family: Georgia;
+    overflow:auto;
+}
+
+h2{
+    color: #b32036;
+    padding: 7px 0px 7px 0px;
+    font-size: 15px;
+    font-family: Georgia;
+}
+
+p{
+    padding: 10px 0px 20px 0px;
+    font-size: 12px;
+    font-family: Georgia;
+}
+
+.percent{
+    font-size: 15px;
+    font-family: Georgia;
+}
+
+#result{
+    font-family: Georgia;
+    float:left;
+    clear:left;
+}
+
+#addRow{
+    font-size: 8px;
+    position: relative;
+    margin-top:14px;
+    margin-bottom:7px;
+    padding: 1px 4px;
+}
+
+#meanButton, #weightButton{
+    background-color: #b32036;
+    font-size:11px;
+    border: none;
+    color: white;
+    width: 67px;
+    border-radius: 3px;
+    padding: 5px 0px;
+    float: right;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+.weightInput, .grInput{
+    
+    width: 28px;
+    left:14px;
+    height: 21px;
+}

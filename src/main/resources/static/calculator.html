@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="/css/calculator.css">
+    <script src="/js/calculator.js" defer></script>
+</head>
+
+<body>
+    <!-- <header>
+        <h1>Grade Calculator</h1>
+    </header> -->
+
+    <main>
+        <section>
+
+        </section>
+        <h1>Grade Calculator</h1>
+
+
+        <section id="mainpart">
+            <h2>Activities</h2>
+            <p>Give grades to the numeric activities:</p>
+
+            <table id="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Short Name</th>
+                    <th>Weight</th>
+                    <th>Grade</th>
+                    <th>Percent</th>
+                </tr>
+                <row>
+                    <tr>
+                        <td>Activity 1</td>
+                        <td>A1</td>
+                        <td><input name="weight" class="weightInput inputs"></td>
+                        <td><input name="grfield1" class="grInput inputs"> / <input name="grfield2" class="grInput inputs"></td>
+                        <td><percent class="percentField" readonly> </percent></td>
+                    </tr>
+                </row>
+            </table>
+
+            <button id="addRow">ADD ROW</button>
+            <h2>Result</h2>
+
+            <result id="result"> </result>
+            <br>
+            <button id="meanButton" type="button" onclick="calcMean()">MEAN</button>
+            <button id="weightButton" type="button" onclick="calcWeighted()">WEIGHTED</button>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
