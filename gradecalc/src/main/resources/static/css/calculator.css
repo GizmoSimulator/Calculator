@@ -57,7 +57,7 @@ th{
 th, td{
     padding: 5px 5px 5px 5px;
     min-width: none;
-    font-size: 11px;
+    font-size: 12px;
     font-family: Georgia;
     overflow:auto;
 }
@@ -65,13 +65,13 @@ th, td{
 h2{
     color: #b32036;
     padding: 7px 0px 7px 0px;
-    font-size: 14px;
+    font-size: 15px;
     font-family: Georgia;
 }
 
 p{
     padding: 10px 0px 20px 0px;
-    font-size: 11px;
+    font-size: 12px;
     font-family: Georgia;
 }
 
