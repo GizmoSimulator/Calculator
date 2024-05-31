@@ -12,7 +12,7 @@ body{
 
 /* top right bottom left */
 main{
-    height: 80vh;
+    /* height: 80vh; */
     padding: 10px 30px 40px;
     background-color: white;
     border-top: 20px solid #3D3935;
@@ -59,6 +59,7 @@ th, td{
     min-width: none;
     font-size: 11px;
     font-family: Georgia;
+    overflow:auto;
 }
 
 h2{
@@ -68,10 +69,21 @@ h2{
     font-family: Georgia;
 }
 
-p, .result{
+p{
     padding: 10px 0px 20px 0px;
     font-size: 11px;
     font-family: Georgia;
+}
+
+.percent{
+    font-size: 15px;
+    font-family: Georgia;
+}
+
+#result{
+    font-family: Georgia;
+    float:left;
+    clear:left;
 }
 
 #addRow{
@@ -84,10 +96,10 @@ p, .result{
 
 #meanButton, #weightButton{
     background-color: #b32036;
-    font-size: 9px;
+    font-size:11px;
     border: none;
     color: white;
-    width: 63px;
+    width: 67px;
     border-radius: 3px;
     padding: 5px 0px;
     float: right;
@@ -96,14 +108,9 @@ p, .result{
 }
 
 
-.weightInput, .grInput, .percentField{
+.weightInput, .grInput{
     
     width: 28px;
     left:14px;
     height: 21px;
 }
-
-/* .percentField{
-    user-select: none;
-    outline: none;
-} */
