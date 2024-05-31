@@ -21,6 +21,8 @@ function addRow() {
     col4.innerHTML = '<input name="grfield1" class="grInput inputs"> / <input name="grfield2" class="grInput inputs">';
     col5.innerHTML = '<percent class="percentField"> </percent>';
 
+    document.body.style.marginBottom = "110px";
+
     addInputEvListeners();
 }
 
@@ -66,7 +68,6 @@ function calcMean() {
     var rows = table.getElementsByTagName("tr");
 
     var totalGrades = 0;
-    // var rowCount = rows.length - 1; // Exclude header row
     var validRowCount = 0;
 
     for (let j = 1; j < rows.length; j++) {
@@ -102,8 +103,6 @@ function calcWeighted() {
     var totalGrades = 0;
     var weightSum = 0;
 
-    var isValid = true;
-
     for (let j = 1; j < rows.length; j++) {
         row = rows[j];
         var grField1Value = parseFloat(row.querySelector('input[name="grfield1"]').value);
@@ -117,15 +116,13 @@ function calcWeighted() {
             weightSum = weightSum + weightVal;
         }
         else {
-
-            isValid = false;
-            break;
+            continue;
         }
     }
 
     var weighted = totalGrades / weightSum * 100;
 
-    if (isNaN(weighted) || !isValid || weightSum == 0) {
+    if (isNaN(weighted) || weightSum == 0) {
         document.getElementById("result").textContent = '';
     }
     else {
@@ -133,6 +130,4 @@ function calcWeighted() {
     }
 }
 
-
-console.log("hi");
 addInputEvListeners();
