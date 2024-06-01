@@ -44,21 +44,39 @@ function calcPercent(input) {
     console.log(rowIndex)
     console.log(row);
 
-    var grField1Value = parseFloat(row.querySelector('input[name="grfield1"]').value);
-    var grField2Value = parseFloat(row.querySelector('input[name="grfield2"]').value);
-    var weightVal = parseFloat(row.querySelector('input[name="weight"]').value);
+    // .trim() is here to allow leading and trailing spaces
+    var grField1Str = row.querySelector('input[name="grfield1"]').value.trim();
+    var grField2Str = row.querySelector('input[name="grfield2"]').value.trim();
 
     var per = row.querySelector(".percentField");
 
+    // if one field is empty or both are just spaces, set text to empty
+    if (grField1Str.trim() === "" || grField2Str.trim() === "") {
+        per.textContent = " ";
+        return;
+    }
+    
+    var grField1Value = parseFloat(grField1Str);
+    var grField2Value = parseFloat(grField2Str);
+
+    // Since parseFloat gets rid of letters, check if input is not only numbers
+    // === specifically means same type comparison
+    if (!(grField1Value.toString() === grField1Str) ||
+        !(grField2Value.toString() === grField2Str) ) { 
+            per.textContent = "Please type in numbers only";
+            return;
+        }
+
     // NaN stands for Not a Number, includes things like strings and symbols
     // Can't divide by 0, so grfield2 is > only.
+    // Updates percentage if both fields are numbers.
     if ((!isNaN(grField1Value) && grField1Value >= 0) && (!isNaN(grField2Value) && grField2Value > 0)
     ) {
         var percent = (grField1Value / grField2Value) * 100;
         per.textContent = percent.toFixed(2) + '%'; // Update percentage field
     }
     else {
-        per.textContent = ''; // Clear percentage field if inputs are not valid numbers
+        per.textContent = "Please type in numbers only";
     }
 
 }
@@ -70,10 +88,25 @@ function calcMean() {
     var totalGrades = 0;
     var validRowCount = 0;
 
+    var allGradeFieldsValid = true;
+
     for (let j = 1; j < rows.length; j++) {
         row = rows[j];
-        var grField1Value = parseFloat(row.querySelector('input[name="grfield1"]').value);
-        var grField2Value = parseFloat(row.querySelector('input[name="grfield2"]').value);
+
+        // .trim() is here to allow leading and trailing spaces
+        var grField1Str = row.querySelector('input[name="grfield1"]').value.trim();
+        var grField2Str = row.querySelector('input[name="grfield2"]').value.trim();
+        
+        var grField1Value = parseFloat(grField1Str);
+        var grField2Value = parseFloat(grField2Str);
+
+        // Since parseFloat gets rid of letters, check if input is not only numbers
+        // === specifically means same type comparison
+        if (!(grField1Value.toString() === grField1Str) ||
+            !(grField2Value.toString() === grField2Str) ) { 
+                allGradeFieldsValid = false;
+                break;
+            }
 
         if ((!isNaN(grField1Value) && grField1Value >= 0) && (!isNaN(grField2Value) && grField2Value > 0)
         ) {
@@ -82,14 +115,15 @@ function calcMean() {
             validRowCount = validRowCount + 1;
         }
         else {
-            continue;
+            allGradeFieldsValid = false;
+            break;
         }
     }
 
     var mean = totalGrades / validRowCount * 100;
 
-    if (isNaN(mean)) {
-        document.getElementById("result").textContent = '';
+    if (isNaN(mean) || !allGradeFieldsValid) {
+        document.getElementById("result").textContent = "Please fill in all Grade fields, with positive numbers only.";
     }
     else {
         document.getElementById("result").textContent = mean.toFixed(2) + "/100.00";
@@ -103,12 +137,30 @@ function calcWeighted() {
     var totalGrades = 0;
     var weightSum = 0;
 
+    var allFieldsValid = true;
+
     for (let j = 1; j < rows.length; j++) {
         row = rows[j];
-        var grField1Value = parseFloat(row.querySelector('input[name="grfield1"]').value);
-        var grField2Value = parseFloat(row.querySelector('input[name="grfield2"]').value);
-        var weightVal = parseFloat(row.querySelector('input[name="weight"]').value);
+        // .trim() is here to allow leading and trailing spaces
+        var grField1Str = row.querySelector('input[name="grfield1"]').value.trim();
+        var grField2Str = row.querySelector('input[name="grfield2"]').value.trim();
+        var weightStr = row.querySelector('input[name="weight"]').value.trim();
+        
+        var grField1Value = parseFloat(grField1Str);
+        var grField2Value = parseFloat(grField2Str);
+        var weightVal = parseFloat(weightStr);
 
+        // Since parseFloat gets rid of letters, check if input is not only numbers
+        // === specifically means same type comparison
+        if (!(grField1Str === parseFloat(grField1Value).toString()) ||
+            !(grField2Str === parseFloat(grField2Value).toString()) ||
+            !(weightStr === parseFloat(weightVal).toString())) { 
+                allFieldsValid = false;
+                break;
+            }
+
+        // check if numbers are valid and greater than or equal to 0
+        // except for grField2Value because it's dividing)
         if ((!isNaN(grField1Value) && grField1Value >= 0) && (!isNaN(grField2Value) && grField2Value > 0)
             && (!isNaN(weightVal) && weightVal >= 0)) {
             var grade = (grField1Value / grField2Value) * weightVal;
@@ -116,14 +168,19 @@ function calcWeighted() {
             weightSum = weightSum + weightVal;
         }
         else {
-            continue;
+            allFieldsValid = false;
+            break;
         }
     }
 
     var weighted = totalGrades / weightSum * 100;
 
-    if (isNaN(weighted) || weightSum == 0) {
-        document.getElementById("result").textContent = '';
+    if (isNaN(weighted) || !allFieldsValid) {
+        document.getElementById("result").textContent = "Please fill in all fields, with positive numbers only.";
+    }
+    else if (weightSum == 0)
+    {
+        document.getElementById("result").textContent = "Sum of weights should be > 0";
     }
     else {
         document.getElementById("result").textContent = weighted.toFixed(2) + "/100.00";
