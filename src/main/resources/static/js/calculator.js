@@ -70,6 +70,8 @@ function calcMean() {
     var totalGrades = 0;
     var validRowCount = 0;
 
+    var allGradeFieldsFilled = true;
+
     for (let j = 1; j < rows.length; j++) {
         row = rows[j];
         var grField1Value = parseFloat(row.querySelector('input[name="grfield1"]').value);
@@ -82,14 +84,15 @@ function calcMean() {
             validRowCount = validRowCount + 1;
         }
         else {
-            continue;
+            allGradeFieldsFilled = false;
+            break;
         }
     }
 
     var mean = totalGrades / validRowCount * 100;
 
-    if (isNaN(mean)) {
-        document.getElementById("result").textContent = '';
+    if (isNaN(mean) || !allGradeFieldsFilled) {
+        document.getElementById("result").textContent = "Please fill in all Grade fields with positive numbers.";
     }
     else {
         document.getElementById("result").textContent = mean.toFixed(2) + "/100.00";
@@ -102,6 +105,8 @@ function calcWeighted() {
 
     var totalGrades = 0;
     var weightSum = 0;
+
+    var allFieldsValid = true;
 
     for (let j = 1; j < rows.length; j++) {
         row = rows[j];
@@ -116,14 +121,19 @@ function calcWeighted() {
             weightSum = weightSum + weightVal;
         }
         else {
-            continue;
+            allFieldsValid = false;
+            break;
         }
     }
 
     var weighted = totalGrades / weightSum * 100;
 
-    if (isNaN(weighted) || weightSum == 0) {
-        document.getElementById("result").textContent = '';
+    if (isNaN(weighted) || !allFieldsValid) {
+        document.getElementById("result").textContent = "Please fill in all fields with positive numbers.";
+    }
+    else if(weightSum == 0)
+    {
+        document.getElementById("result").textContent = "Sum of weights should be > 0";
     }
     else {
         document.getElementById("result").textContent = weighted.toFixed(2) + "/100.00";
